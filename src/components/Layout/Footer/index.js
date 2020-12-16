@@ -1,4 +1,4 @@
-import React from 'components/Layout/Footer/react'
+import React from 'react'
 
 import Footer from './style'
 

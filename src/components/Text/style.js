@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export default styled.div`
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.2;

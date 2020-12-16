@@ -1,9 +1,9 @@
 import React from 'react'
 
-import NavBar from './style'
+import Row from './style'
 
 export default (props) => (
-  <NavBar {...props}>
+  <Row {...props}>
     <React.Fragment>{props.children}</React.Fragment>
-  </NavBar>
+  </Row>
 )

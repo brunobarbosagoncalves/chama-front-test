@@ -7,6 +7,8 @@ import {
   all,
 } from 'redux-saga/effects'
 
+import { toast } from 'react-toastify'
+
 import githubApi from 'api/githubApi'
 
 function* githubUserFetch(action) {
@@ -21,8 +23,18 @@ function* githubUserFetch(action) {
 
     const user = resp.data
 
+    const respFollowers = yield call(githubApi.get, user.followers_url)
+    user._followers = respFollowers.data || []
+
+    const respFollowing = yield call(githubApi.get, user.organizations_url)
+    user._followings = respFollowing.data || []
+
+    const respRepos = yield call(githubApi.get, user.repos_url)
+    user._repos = respRepos.data || []
+
     yield put({ type: 'GITHUB_USER_SET', payload: { ...user } })
   } catch (e) {
+    toast.error('Not found repository')
     yield put({ type: 'GITHUB_USER_SET', payload: false })
   }
 }
@@ -39,6 +51,7 @@ function* githubUsersFetch(action) {
 
     yield put({ type: 'GITHUB_USER_LIST_SET', payload: { ...users } })
   } catch (e) {
+    toast.error('Not found repositories')
     yield put({ type: 'GITHUB_USER_LIST_SET', payload: false })
   }
 }

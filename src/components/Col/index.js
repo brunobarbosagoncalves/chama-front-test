@@ -1,9 +1,9 @@
 import React from 'react'
 
-import NavBar from './style'
+import Col from './style'
 
 export default (props) => (
-  <NavBar {...props}>
+  <Col {...props}>
     <React.Fragment>{props.children}</React.Fragment>
-  </NavBar>
+  </Col>
 )

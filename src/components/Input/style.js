@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export default styled.button`
+export default styled.input`
   width: 100%;
   min-height: 1.5rem;
   border: 1px solid gray;

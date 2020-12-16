@@ -7,6 +7,7 @@ import { store, persistor } from 'redux/index'
 
 import NotFound from 'pages/notfound'
 import Home from 'pages/home'
+import History from 'pages/history'
 
 import history from 'services/history'
 import { GlobalStyle, Theme } from 'styles'
@@ -21,6 +22,7 @@ export default (props) => (
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/history" component={History} />
             <Route path="*" component={NotFound} />
           </Switch>
         </Router>
