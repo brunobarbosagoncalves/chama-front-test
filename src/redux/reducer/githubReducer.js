@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
       return { ...state, user: action.payload }
 
     case GITHUB_USER_HISTORY_ADD:
-      return { ...state, historic: [...state.historic, action.payload] }
+      return { ...state, historic: [action.payload, ...state.historic] }
 
     default:
       return state

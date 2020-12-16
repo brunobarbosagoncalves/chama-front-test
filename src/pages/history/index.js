@@ -55,7 +55,7 @@ export default (props) => {
         <LBody>
           <Text h3>History </Text>
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            {github.historic.map((item) => (
+            {github.historic.reverse().map((item) => (
               <div
                 style={{
                   borderRadius: '1rem',
